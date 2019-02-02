@@ -20,7 +20,7 @@ public class TurnDegrees extends Command {
   public double m_desiredDistance;
   public double m_currentError;
 
-  public double m_deritive;
+  public double m_derivative;
   public double m_oldTime;
   public double m_currentTime;
   public double m_oldError;
@@ -53,7 +53,7 @@ public class TurnDegrees extends Command {
 // used for more precise calculations
     m_currentError = m_desiredDistance - Robot.m_drive.Position();
 // ^^ tells how much further the Robot goes
-    m_deritive = (m_currentError - m_oldError) / (m_currentTime - m_oldTime);
+    m_derivative = (m_currentError - m_oldError) / (m_currentTime - m_oldTime);
 // ^^ PID formula stuff. The change of error / change of time to be more precise
     m_output = m_currentError * constants.kP;
 // tells how much power the motor will change
