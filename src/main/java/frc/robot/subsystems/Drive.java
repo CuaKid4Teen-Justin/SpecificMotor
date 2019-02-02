@@ -11,6 +11,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * Add your docs here.
@@ -23,7 +24,8 @@ public static TalonSRX m_Rave;
 
 
 public Drive (){
-  m_Rave = new TalonSRX(1);
+  m_Rave = new TalonSRX(5);
+  m_Rave.setInverted(true);
 }
 
 public double Position(){
@@ -31,11 +33,15 @@ public double Position(){
 }
 
 public void SetPower(double power){
- m_Rave.set(ControlMode.PercentOutput, power);
+ m_Rave.set(ControlMode.PercentOutput, -power);
 }
 
 public void ResetEncoders(){
 m_Rave.setSelectedSensorPosition(0);
+}
+
+public void ReportToDashboard(){
+SmartDashboard.putNumber("Encoder Value", Position());
 }
 
   @Override

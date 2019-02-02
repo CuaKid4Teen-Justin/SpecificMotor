@@ -13,7 +13,16 @@ package frc.robot.Constants;
 public class constants {
     // kp * ep + kD * eD
     // this is where you manually input and tune constants
-  public static final double kP = 0.01;
+  public static final double kP = 0.000052;
+  public static final double kD = 0.00000070001;
   public static final double tolerance = 3;
-  public static final double kD = 0;
+
+  // kP is for UnderShooting
+  // kD is for OverShooting
+
+  // kP three zeroes good, .0001 bad, .0002 "too low?"
+  // don't work? kP too small
+  // kP .00005 1014, .000049 954, .000051 1150. no kD
+
+  // kp 0.00005 better without kD
 }

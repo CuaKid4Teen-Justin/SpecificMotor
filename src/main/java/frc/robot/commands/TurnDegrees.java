@@ -55,7 +55,7 @@ public class TurnDegrees extends Command {
 // ^^ tells how much further the Robot goes
     m_derivative = (m_currentError - m_oldError) / (m_currentTime - m_oldTime);
 // ^^ PID formula stuff. The change of error / change of time to be more precise
-    m_output = m_currentError * constants.kP;
+    m_output = m_currentError * constants.kP + constants.kD * m_derivative;
 // tells how much power the motor will change
     Robot.m_drive.SetPower(m_output);
 // changes motor power
@@ -69,7 +69,7 @@ public class TurnDegrees extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return Math.abs(m_currentError) < constants.tolerance;
+    return Math.abs(m_currentError) <= constants.tolerance;
   }
 
   // Called once after isFinished returns true

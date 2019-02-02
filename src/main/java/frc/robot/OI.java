@@ -8,6 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.OpenLoop;
+import frc.robot.commands.ResetEncoders;
 import frc.robot.commands.TurnDegrees;
 
 /**
@@ -19,8 +21,8 @@ public class OI {
 public OI(){
 
   SmartDashboard.putData("1000 ticks", new TurnDegrees(1000));
-  // SmartDashboard.putData(, new TurnDegrees(1500));
-  SmartDashboard.putData("Reset Encoders", new TurnDegrees(0));
+  SmartDashboard.putData("Reset Encoders", new ResetEncoders());
+  SmartDashboard.putData("Open Loop", new OpenLoop());
 
 }
 
