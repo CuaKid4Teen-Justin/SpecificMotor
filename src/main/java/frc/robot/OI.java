@@ -7,11 +7,23 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.TurnDegrees;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+
+public OI(){
+
+  SmartDashboard.putData("1000 ticks", new TurnDegrees(1000));
+  // SmartDashboard.putData(, new TurnDegrees(1500));
+  SmartDashboard.putData("Reset Encoders", new TurnDegrees(0));
+
+}
+
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.

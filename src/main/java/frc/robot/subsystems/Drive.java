@@ -34,6 +34,10 @@ public void SetPower(double power){
  m_Rave.set(ControlMode.PercentOutput, power);
 }
 
+public void ResetEncoders(){
+m_Rave.setSelectedSensorPosition(0);
+}
+
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
