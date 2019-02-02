@@ -12,8 +12,8 @@ package frc.robot.Constants;
  */
 public class constants {
     // kp * ep + kD * eD
+    
   public static final double kP = 0.01;
   public static final double tolerance = 3;
   public static final double kD = 0;
-
 }

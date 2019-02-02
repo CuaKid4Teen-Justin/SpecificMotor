@@ -29,7 +29,6 @@ public class Robot extends TimedRobot {
   public static Drive m_drive;
   public static OI m_oi;
 
-
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -41,6 +40,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_drive = new Drive();
     m_oi = new OI();
+    
     m_chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);

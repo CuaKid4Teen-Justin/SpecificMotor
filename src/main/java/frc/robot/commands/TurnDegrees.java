@@ -7,13 +7,10 @@
 
 package frc.robot.commands;
 
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.Constants.constants;
-import frc.robot.subsystems.Drive;
 
 public class TurnDegrees extends Command {
 
@@ -28,7 +25,6 @@ public class TurnDegrees extends Command {
   public double m_currentTime;
   public double m_oldError;
 
-
   //error = desired - actual distance
   //m_output 
   // drive subsystem does GetPosition
@@ -38,7 +34,6 @@ public class TurnDegrees extends Command {
   public TurnDegrees(double distance) {
     m_desiredDistance = distance; 
   requires(Robot.m_drive);
-
 
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);

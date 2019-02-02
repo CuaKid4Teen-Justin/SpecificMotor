@@ -32,7 +32,6 @@ public double Position(){
 
 public void SetPower(double power){
  m_Rave.set(ControlMode.PercentOutput, power);
-
 }
 
   @Override
