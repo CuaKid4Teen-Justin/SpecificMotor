@@ -44,6 +44,10 @@ public void ReportToDashboard(){
 SmartDashboard.putNumber("Encoder Value", Position());
 }
 
+public void resetGyro(){
+// m_gyro.reset();
+}
+
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
