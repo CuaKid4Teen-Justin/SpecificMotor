@@ -44,6 +44,11 @@ public void ReportToDashboard(){
 SmartDashboard.putNumber("Encoder Value", Position());
 }
 
+public void SetVelocity(double Vel){
+    m_Rave.set(ControlMode.Velocity, Vel);
+}
+
+
 public void resetGyro(){
 // m_gyro.reset();
 }
